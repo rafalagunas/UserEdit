@@ -58,6 +58,12 @@ class UserEdit extends Component {
                     title="Guardar"
                     onPress={(e) => this.userUpdate(e)}
                     />
+
+                <Button
+                    title="Imagen"
+                    onPress={(e) => this.userUpdate(e)}
+                    />
+
             </View>    
         );
     }
