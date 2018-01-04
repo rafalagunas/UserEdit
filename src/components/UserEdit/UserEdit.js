@@ -54,6 +54,7 @@ class UserEdit extends Component {
 
                 <Button
                     title="Guardar"
+                    onPress={(e) => this.userUpdate(e)}
                     />
             </View>    
         );
@@ -66,13 +67,22 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
  
-const mapStateToProps = (state, ownProps) => {
+/*const mapStateToProps = (state, ownProps) => {
     return {
-        username: state.auth.username,
-        name: state.auth.name,
-        lastname: state.auth.lastname,
-        email: state.auth.email
+        username: state.EditUserReducer.username,
+        name: state.EditUserReducer.name,
+        lastname: state.EditUserReducer.lastname,
+        email: state.EditUserReducer.email
     };
+}*/
+
+const mapStateToProps = state => {
+    return {
+        username: state.EditUserReducer.username,    
+        name: state.EditUserReducer.name,
+        lastname: state.EditUserReducer.lastname,
+        email: state.EditUserReducer.email
+    }
 }
  
 export default connect(mapStateToProps, mapDispatchToProps)(UserEdit);
