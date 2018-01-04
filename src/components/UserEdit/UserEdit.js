@@ -69,15 +69,6 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
  
-/*const mapStateToProps = (state, ownProps) => {
-    return {
-        username: state.EditUserReducer.username,
-        name: state.EditUserReducer.name,
-        lastname: state.EditUserReducer.lastname,
-        email: state.EditUserReducer.email
-    };
-}*/
-
 const mapStateToProps = state => {
     return {
         username: state.EditUserReducer.username,    
