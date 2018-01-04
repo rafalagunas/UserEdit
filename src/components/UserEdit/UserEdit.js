@@ -27,6 +27,8 @@ class UserEdit extends Component {
     userUpdate (e) {
         this.props.userUpdate(this.state.username, this.state.name, this.state.lastname, this.state.email);
         e.preventDefault();
+   console.debug(this.props)
+
     }
     render() {
         return(
