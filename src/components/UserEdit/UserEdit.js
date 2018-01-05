@@ -21,7 +21,8 @@ class UserEdit extends Component {
             username: '',
             name: '',
             lastname: '',
-            email: ''
+            email: '',
+            image: require('../../images/descarga.jpg')
         };
     }
 
@@ -35,7 +36,7 @@ class UserEdit extends Component {
         return(
             <View>
                 <Image
-                    source={require('../../images/descarga.jpg')}
+                    source={this.state.image}
                     style={{marginLeft:70}}
                 />
 
