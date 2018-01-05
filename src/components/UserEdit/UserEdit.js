@@ -5,6 +5,7 @@ import {
   Input,
   View,
   Button,
+  Image,
   TextInput
 } from 'react-native';
 
@@ -27,31 +28,39 @@ class UserEdit extends Component {
     userUpdate (e) {
         this.props.userUpdate(this.state.username, this.state.name, this.state.lastname, this.state.email);
         e.preventDefault();
-   console.debug(this.props)
-
+        console.debug(this.props)
     }
+
     render() {
         return(
-            <View > 
+            <View>
+                <Image
+                    source={require('../../images/descarga.jpg')}
+                />
+
                 <TextInput 
                     placeholder="Username"
                     onChangeText={(text) => this.setState({ username: text })}
                     value={this.state.username}
+                    textAlign="center"
                     />
                 <TextInput 
                     placeholder="Nombre"
                     onChangeText={(text) => this.setState({ name: text })}
                     value={this.state.name}
+                    textAlign="center"
                     />
                 <TextInput 
                     placeholder="Apellido"
                     onChangeText={(text) => this.setState({ lastname: text })}
                     value={this.state.lastname}
+                    textAlign="center"
                     />
                 <TextInput 
                     placeholder="Correo"
                     onChangeText={(text) => this.setState({ email: text })}
                     value={this.state.email}
+                    textAlign="center"
                     />
 
                 <Button
@@ -85,3 +94,4 @@ const mapStateToProps = state => {
 }
  
 export default connect(mapStateToProps, mapDispatchToProps)(UserEdit);
+
