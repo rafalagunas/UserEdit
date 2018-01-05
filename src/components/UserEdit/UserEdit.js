@@ -43,7 +43,6 @@ class UserEdit extends Component {
                     source={this.state.image}
                     style={{marginLeft:90}}
                 />
-
                 <TextInput 
                     placeholder="Usuario"
                     onChangeText={(text) => this.setState({ username: text })}
@@ -61,7 +60,6 @@ class UserEdit extends Component {
                     onChangeText={(text) => this.setState({ lastname: text })}
                     value={this.state.lastname}
                     textAlign="center"
-                    
                     />
                 <TextInput 
                     placeholder="Correo"
@@ -69,13 +67,11 @@ class UserEdit extends Component {
                     value={this.state.email}
                     textAlign="center"
                     />
-
                 <Button
                     title="Guardar"
                     onPress={(e) => this.userUpdate(e)}
                     color="#461976"
                 />
-
                 <Button
                     title="Imagen"
                     onPress={(e) => this.userChangeImage(e)}
@@ -102,4 +98,3 @@ const mapStateToProps = state => {
 }
  
 export default connect(mapStateToProps, mapDispatchToProps)(UserEdit);
-
