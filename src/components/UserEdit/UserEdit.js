@@ -6,12 +6,12 @@ import {
   View,
   Button,
   Image,
+  ScrollView,
   TextInput
 } from 'react-native';
 
 import {connect} from 'react-redux';
 import { update } from '../../actions/UserEdit';
-
 
 class UserEdit extends Component {
     constructor (props) {
@@ -33,12 +33,13 @@ class UserEdit extends Component {
     }
 
     userChangeImage (e){
+
         alert("hola")
     }
 
     render() {
         return(
-            <View>
+            <ScrollView>
                 <Image
                     source={this.state.image}
                     style={{marginLeft:90}}
@@ -74,10 +75,10 @@ class UserEdit extends Component {
                 />
                 <Button
                     title="Imagen"
-                    onPress={(e) => this.userChangeImage(e)}
+                    onPress={e => this.userChangeImage(e)}
                     style={{paddingTop:30}}
                     />
-            </View>    
+            </ScrollView>    
         );
     }
 }
