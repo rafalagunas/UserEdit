@@ -36,6 +36,7 @@ class UserEdit extends Component {
             <View>
                 <Image
                     source={require('../../images/descarga.jpg')}
+                    style={{marginLeft:70}}
                 />
 
                 <TextInput 
@@ -55,6 +56,7 @@ class UserEdit extends Component {
                     onChangeText={(text) => this.setState({ lastname: text })}
                     value={this.state.lastname}
                     textAlign="center"
+                    
                     />
                 <TextInput 
                     placeholder="Correo"
@@ -66,7 +68,8 @@ class UserEdit extends Component {
                 <Button
                     title="Guardar"
                     onPress={(e) => this.userUpdate(e)}
-                    />
+                    color="#461976"
+                />
 
                 <Button
                     title="Imagen"
