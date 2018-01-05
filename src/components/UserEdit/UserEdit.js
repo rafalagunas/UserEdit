@@ -32,6 +32,10 @@ class UserEdit extends Component {
         console.debug(this.props)
     }
 
+    userChangeImage (e){
+        alert("hola")
+    }
+
     render() {
         return(
             <View>
@@ -74,7 +78,7 @@ class UserEdit extends Component {
 
                 <Button
                     title="Imagen"
-                    onPress={(e) => this.userUpdate(e)}
+                    onPress={(e) => this.userChangeImage(e)}
                     />
 
             </View>    
