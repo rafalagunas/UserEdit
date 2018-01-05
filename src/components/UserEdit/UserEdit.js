@@ -41,11 +41,11 @@ class UserEdit extends Component {
             <View>
                 <Image
                     source={this.state.image}
-                    style={{marginLeft:70}}
+                    style={{marginLeft:90}}
                 />
 
                 <TextInput 
-                    placeholder="Username"
+                    placeholder="Usuario"
                     onChangeText={(text) => this.setState({ username: text })}
                     value={this.state.username}
                     textAlign="center"
@@ -79,8 +79,8 @@ class UserEdit extends Component {
                 <Button
                     title="Imagen"
                     onPress={(e) => this.userChangeImage(e)}
+                    style={{paddingTop:30}}
                     />
-
             </View>    
         );
     }
