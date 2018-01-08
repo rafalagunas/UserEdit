@@ -7,11 +7,14 @@ import {
   Button,
   Image,
   ScrollView,
-  TextInput
+  TextInput,
+  CameraRoll
 } from 'react-native';
 
 import {connect} from 'react-redux';
 import { update } from '../../actions/UserEdit';
+import CameraRollPicker from 'react-native-camera-roll-picker';
+import Exmple from './CameraRoll';
 
 class UserEdit extends Component {
     constructor (props) {
@@ -22,7 +25,9 @@ class UserEdit extends Component {
             name: '',
             lastname: '',
             email: '',
-            image: require('../../images/descarga.jpg')
+            image: require('../../images/descarga.jpg'),
+            gallery: false
+
         };
     }
 
@@ -33,16 +38,26 @@ class UserEdit extends Component {
     }
 
     userChangeImage (e){
+    
+    if(this.state.gallery == false){
+       this.setState({gallery: true});
+    }
 
-        alert("hola")
+
     }
 
     render() {
+        if (this.state.gallery)
+        return(
+           <CameraRollPicker />
+        )
+        else 
         return(
             <ScrollView>
                 <Image
                     source={this.state.image}
                     style={{marginLeft:90}}
+                    onPress={(e, state) => this.userChangeImage(e)}
                 />
                 <TextInput 
                     placeholder="Usuario"
@@ -75,7 +90,7 @@ class UserEdit extends Component {
                 />
                 <Button
                     title="Imagen"
-                    onPress={e => this.userChangeImage(e)}
+                    onPress={(e, state) => this.userChangeImage(e)}
                     style={{paddingTop:30}}
                     />
             </ScrollView>    
