@@ -114,6 +114,7 @@ class UserEdit extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        
         userUpdate: (username, first_name, last_name, email, phone, password) => { dispatch(update(username, first_name, last_name, email, phone, password)); }
     }
 }
