@@ -17,9 +17,13 @@ export default function reducer (state= defaultState, action) {
                 first_name: action.first_name,
                 last_name: action.last_name,
                 email: action.email,
-                phone: action.phone,
-                password: action.password
+                phone: action.phone
             });
+        
+        case 'NEW_PASSWORD':
+            return Object.assign({}, state, {
+                password: action.password
+            });    
 
         default:
             return state;
