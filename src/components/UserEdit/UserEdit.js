@@ -14,7 +14,7 @@ import {
 import {connect} from 'react-redux';
 import { update } from '../../actions/UserEdit';
 import CameraRollPicker from 'react-native-camera-roll-picker';
-import Exmple from './CameraRoll';
+import Example from './CameraRoll';
 
 class UserEdit extends Component {
     constructor (props) {
@@ -22,9 +22,11 @@ class UserEdit extends Component {
         this.state = {
             route: 'UPDATE',
             username: '',
-            name: '',
-            lastname: '',
+            first_name: '',
+            last_name: '',
             email: '',
+            phone:'',
+            password:'',
             image: require('../../images/descarga.jpg'),
             gallery: false
 
@@ -32,24 +34,23 @@ class UserEdit extends Component {
     }
 
     userUpdate (e) {
-        this.props.userUpdate(this.state.username, this.state.name, this.state.lastname, this.state.email);
+        this.props.userUpdate(this.state.username, this.state.first_name, this.state.last_name, this.state.email, this.state.phone, this.state.password);
         e.preventDefault();
         console.debug(this.props)
     }
 
     userChangeImage (e){
     
-    if(this.state.gallery == false){
-       this.setState({gallery: true});
+        if(this.state.gallery == false){
+        this.setState({gallery: true});
+        }
     }
 
-
-    }
 
     render() {
         if (this.state.gallery)
         return(
-           <CameraRollPicker />
+            <Example/>
         )
         else 
         return(
@@ -67,14 +68,14 @@ class UserEdit extends Component {
                     />
                 <TextInput 
                     placeholder="Nombre"
-                    onChangeText={(text) => this.setState({ name: text })}
-                    value={this.state.name}
+                    onChangeText={(text) => this.setState({ first_name: text })}
+                    value={this.state.first_name}
                     textAlign="center"
                     />
                 <TextInput 
                     placeholder="Apellido"
-                    onChangeText={(text) => this.setState({ lastname: text })}
-                    value={this.state.lastname}
+                    onChangeText={(text) => this.setState({ last_name: text })}
+                    value={this.state.last_name}
                     textAlign="center"
                     />
                 <TextInput 
@@ -83,6 +84,21 @@ class UserEdit extends Component {
                     value={this.state.email}
                     textAlign="center"
                     />
+                
+                 <TextInput 
+                    placeholder="Teléfono"
+                    onChangeText={(text) => this.setState({ phone: text })}
+                    value={this.state.phone}
+                    textAlign="center"
+                    />
+
+                <TextInput 
+                    placeholder="Nueva contraseña"
+                    onChangeText={(text) => this.setState({ password: text })}
+                    value={this.state.password}
+                    textAlign="center"
+                    /> 
+
                 <Button
                     title="Guardar"
                     onPress={(e) => this.userUpdate(e)}
@@ -100,16 +116,19 @@ class UserEdit extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        userUpdate: (username, name, lastname, email) => { dispatch(update(username, name, lastname, email)); },
+        userUpdate: (username, first_name, last_name, email, phone, password) => { dispatch(update(username, first_name, last_name, email, phone, password)); },
     }
 }
  
 const mapStateToProps = state => {
     return {
         username: state.EditUserReducer.username,    
-        name: state.EditUserReducer.name,
-        lastname: state.EditUserReducer.lastname,
-        email: state.EditUserReducer.email
+        first_name: state.EditUserReducer.first_name,
+        last_name: state.EditUserReducer.last_name,
+        email: state.EditUserReducer.email,
+        phone: state.EditUserReducer.phone,
+        password: state.EditUserReducer.password
+
     }
 }
  

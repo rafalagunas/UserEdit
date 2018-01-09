@@ -34,16 +34,12 @@ export default class Example extends Component {
 
     console.log(current);
     console.log(this.state.selected);
+    alert(this.state.selected);
   }
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.content}>
-          <Text style={styles.text}>
-            <Text style={styles.bold}> {this.state.num} </Text> images has been selected
-          </Text>
-        </View>
+
         <CameraRollPicker
           scrollRenderAheadDistance={500}
           initialListSize={1}
@@ -51,13 +47,13 @@ export default class Example extends Component {
           removeClippedSubviews={false}
           groupTypes='SavedPhotos'
           batchSize={5}
-          maximum={3}
+          selectSingleItem={true}
           selected={this.state.selected}
           assetType='Photos'
           imagesPerRow={3}
           imageMargin={5}
           callback={this.getSelectedImages.bind(this)} />
-      </View>
+
     );
   }
 }
