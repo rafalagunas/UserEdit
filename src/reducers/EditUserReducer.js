@@ -5,14 +5,17 @@ const defaultState = {
     email: '',
     phone:'',
     password:'',
-    
 };
  
+const { Map } = require('immutable');
+const usuariomap = Map({ username: 'das', first_name: 'das', last_name: '', email:'' , phone:'', password:'' })
+const usuario = usuariomap;
+const usuario_redux = usuario;
 
-export default function reducer (state= defaultState, action) {
+export default function reducer (state= usuario, action) {
     switch (action.type){
         case 'UPDATE':
-            return Object.assign({}, state, {
+            return (usuario_redux.push, state, {
                 username: action.username,
                 first_name: action.first_name,
                 last_name: action.last_name,
@@ -21,7 +24,7 @@ export default function reducer (state= defaultState, action) {
             });
         
         case 'NEW_PASSWORD':
-            return Object.assign({}, state, {
+            return (usuario_redux.push, state, {
                 password: action.password
             });    
 

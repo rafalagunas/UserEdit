@@ -11,7 +11,7 @@ import store from './store';
 
 const App = () => (
   <Provider store={store}>
-    <NewPass />
+    <UserEdit />
   </Provider>
 )
 
