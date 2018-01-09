@@ -47,7 +47,7 @@ class NewPass extends Component{
             textAlign="center"
             />
             <TextInput 
-            placeholder="Nueva contraseña"
+            placeholder="Confirmar contraseña"
             onChangeText={(text) => this.setState({ confirm_password: text })}
             value={this.state.confirm_password}
             textAlign="center"
