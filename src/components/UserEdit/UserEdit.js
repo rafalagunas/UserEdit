@@ -36,6 +36,7 @@ class UserEdit extends Component {
         this.props.userUpdate(this.state.username, this.state.first_name, this.state.last_name, this.state.email, this.state.phone, this.state.password);
         e.preventDefault();
         console.debug(this.props)
+        
     }
 
     userChangeImage (e){

@@ -15,7 +15,7 @@ const usuario_redux = usuario;
 export default function reducer (state= usuario, action) {
     switch (action.type){
         case 'UPDATE':
-            return (usuario_redux.push, state, {
+            return (state.mergeWith, {
                 username: action.username,
                 first_name: action.first_name,
                 last_name: action.last_name,
@@ -24,7 +24,7 @@ export default function reducer (state= usuario, action) {
             });
         
         case 'NEW_PASSWORD':
-            return (usuario_redux.push, state, {
+            return (state.mergeWith, state, {
                 password: action.password
             });    
 

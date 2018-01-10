@@ -32,14 +32,14 @@ export default class Example extends Component {
       selected: images,
     });
 
-    console.log(current);
+   // console.log(current);
     console.log(this.state.selected);
-    alert(this.state.selected);
+    //alert(this.state.selected);
+    //conso
   }
 
   render() {
     return (
-
         <CameraRollPicker
           scrollRenderAheadDistance={500}
           initialListSize={1}
