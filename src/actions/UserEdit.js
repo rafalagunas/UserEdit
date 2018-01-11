@@ -6,6 +6,7 @@ export const update = (username, first_name, last_name, email, phone) => {
         last_name: last_name,
         email: email,
         phone: phone
+    
     };
 };
  

@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
-import EditUserReducer from './EditUserReducer';
+import reducer from './EditUserReducer';
 
 const rootReducer = combineReducers ({
-    EditUserReducer
+    reducer
 })
 
 export default rootReducer;

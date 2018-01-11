@@ -1,18 +1,10 @@
-const defaultState = {
-    username: '',
-    first_name: '',
-    last_name: '',
-    email: '',
-    phone:'',
-    password:'',
-};
- 
 const { Map } = require('immutable');
-const usuariomap = Map({ username: 'das', first_name: 'das', last_name: '', email:'' , phone:'', password:'' })
+const usuariomap = Map({ username: 'd', first_name: 'das', last_name: '', email:'' , phone:'', password:'' })
 const usuario = usuariomap;
 const usuario_redux = usuario;
 
-export default function reducer (state= usuario, action) {
+
+const reducer = (state= usuariomap, action)  => {
     switch (action.type){
         case 'UPDATE':
             return (state.mergeWith, {
@@ -32,3 +24,5 @@ export default function reducer (state= usuario, action) {
             return state;
     }
 }
+
+export default reducer;

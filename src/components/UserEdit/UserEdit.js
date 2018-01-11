@@ -11,10 +11,14 @@ import {
   CameraRoll
 } from 'react-native';
 
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+
 import { update } from '../../actions/UserEdit';
+
 import CameraRollPicker from 'react-native-camera-roll-picker';
 import Example from './CameraRoll';
+import reducer from '../../reducers/EditUserReducer';
 
 class UserEdit extends Component {
     constructor (props) {
@@ -32,10 +36,13 @@ class UserEdit extends Component {
         };
     }
 
+
+
+
     userUpdate (e) {
         this.props.userUpdate(this.state.username, this.state.first_name, this.state.last_name, this.state.email, this.state.phone, this.state.password);
         e.preventDefault();
-        console.debug(this.props)
+        //console.debug(this.state)
         
     }
 
@@ -122,12 +129,12 @@ const mapDispatchToProps = (dispatch) => {
  
 const mapStateToProps = state => {
     return {
-        username: state.EditUserReducer.username,    
-        first_name: state.EditUserReducer.first_name,
-        last_name: state.EditUserReducer.last_name,
-        email: state.EditUserReducer.email,
-        phone: state.EditUserReducer.phone,
-        password: state.EditUserReducer.password
+        username: state.reducer.username,    
+        first_name: state.reducer.first_name,
+        last_name: state.reducer.last_name,
+        email: state.reducer.email,
+        phone: state.reducer.phone,
+        password: state.reducer.password
 
     }
 }

@@ -1,6 +1,9 @@
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import rootReducer from './reducers/index';
-
-let store = createStore(rootReducer);
+import logger from 'redux-logger';
+let store = createStore(
+    rootReducer,
+    applyMiddleware(logger)
+);
 
 export default store;
