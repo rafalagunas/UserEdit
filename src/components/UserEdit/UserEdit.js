@@ -14,7 +14,7 @@ import {
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import { update } from '../../actions/UserEdit';
+import { update, changeUsername, changeFirstName, changeLastName, changeEmail, changePhone } from '../../actions/UserEdit';
 
 import CameraRollPicker from 'react-native-camera-roll-picker';
 import Example from './CameraRoll';
@@ -36,7 +36,7 @@ class UserEdit extends Component {
     }
 
     userUpdate (e) {
-        this.props.userUpdate(this.state.username, this.state.first_name, this.state.last_name, this.state.email, this.state.phone, this.state.password);
+        this.props.userUpdate(this.props.username, this.props.first_name, this.props.last_name, this.props.email, this.props.phone, this.props.password);
         e.preventDefault();
         //console.debug(this.state)
     }
@@ -46,6 +46,7 @@ class UserEdit extends Component {
         this.setState({gallery: true});
         }
     }
+
 
 
     render() {
@@ -64,35 +65,35 @@ class UserEdit extends Component {
                 
                 <TextInput 
                     placeholder="Usuario"
-                    onChangeText={(text) => this.setState({ username: text })}
-                    value={this.props.username}
+                    onChangeText={(text) => this.props.usernameChange(text)}
+                    value={this.props.username }
                     textAlign="center"
                 />
                 
                 <TextInput 
                     placeholder="Nombre"
-                    onChangeText={(text) => this.setState({ first_name: text })}
+                    onChangeText={(text) => this.props.FirstNameChange(text)}
                     value={this.props.first_name}
                     textAlign="center"
                 />
                 
                 <TextInput 
                     placeholder="Apellido"
-                    onChangeText={(text) => this.setState({ last_name: text })}
+                    onChangeText={(text) => this.props.LastNameChange(text)}
                     value={this.props.last_name}
                     textAlign="center"
                 />
                 
                 <TextInput 
                     placeholder="Correo"
-                    onChangeText={(text) => this.setState({ email: text })}
+                    onChangeText={(text) => this.props.EmailChange(text)}
                     value={this.props.email}
                     textAlign="center"
                 />
                 
                 <TextInput 
                     placeholder="Teléfono"
-                    onChangeText={(text) => this.setState({ phone: text })}
+                    onChangeText={(text) => this.props.PhoneChange(text)}
                     value={this.props.phone}
                     textAlign="center"
                 />
@@ -116,7 +117,11 @@ class UserEdit extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        
+        usernameChange: (username) => { dispatch(changeUsername(username)); },
+        FirstNameChange: (first_name) => { dispatch(changeFirstName(first_name)); },
+        LastNameChange: (last_name) => { dispatch(changeLastName(last_name)); },
+        EmailChange: (email) => { dispatch(changeEmail(email)); },
+        PhoneChange: (phone) => { dispatch(changePhone(phone)); },
         userUpdate: (username, first_name, last_name, email, phone, password) => { dispatch(update(username, first_name, last_name, email, phone, password)); }
     }
 }
@@ -124,13 +129,12 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = state => {
     console.log(state)
     return {  
-        username: state.reducer.get("username"),    
-        first_name: state.reducer.get("first_name"),
-        last_name: state.reducer.get("last_name"),
-        email: state.reducer.get("email"),
-        phone: state.reducer.get("phone"),
-        password: state.reducer.get("password")
-
+        username: state.edituser.get("username"),    
+        first_name: state.edituser.get("first_name"),
+        last_name: state.edituser.get("last_name"),
+        email: state.edituser.get("email"),
+        phone: state.edituser.get("phone"),
+        password: state.edituser.get("password")
     }
 }
  
