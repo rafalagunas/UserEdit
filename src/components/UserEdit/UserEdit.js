@@ -15,7 +15,6 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
 import { update, changeUsername, changeFirstName, changeLastName, changeEmail, changePhone } from '../../actions/UserEdit';
-
 import CameraRollPicker from 'react-native-camera-roll-picker';
 import Example from './CameraRoll';
 import reducer from '../../reducers/EditUserReducer';
