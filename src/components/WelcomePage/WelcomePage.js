@@ -11,6 +11,7 @@ import {
 
 // Componentes///////////////////////////
 import ImageSlider from 'react-native-image-slider';
+
 ////////////////////////////////////////
 
 
@@ -38,6 +39,7 @@ class WelcomePage extends Component {
         return (
             
             <View>
+
             <ImageSlider
                 images={[
                     `http://placeimg.com/640/480/any`,
@@ -47,6 +49,7 @@ class WelcomePage extends Component {
                 position={this.state.position}
                 onPositionChanged={position => this.setState({position})}
                 height={this.state.height}
+                
             />
             <View style={styles.buttonsContainer}>
                     <TouchableOpacity style={styles.ButtonLogin}>
@@ -63,7 +66,10 @@ class WelcomePage extends Component {
 }
 
 const styles = StyleSheet.create({
-
+    next:{
+        backgroundColor:"#000000",
+        marginTop: 10
+    },
     container: {
       flex: 1,
       backgroundColor: '#ecf0f1'
