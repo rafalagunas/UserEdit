@@ -9,17 +9,17 @@ import {
   View
 } from 'react-native';
 
-
+// Componentes///////////////////////////
 import ImageSlider from 'react-native-image-slider';
-import Swiper from 'react-native-swiper';
+////////////////////////////////////////
 
+
+// Variables////////////////////////////
 const window = Dimensions.get('window');
-
-
 const slideHeight = (window.height)/1.3;
-
 const ButtonVieWidth = (window.width)/2;
 const ButtonViewHeight = (window.height)/.5;
+////////////////////////////////////////
 
 class WelcomePage extends Component {
     constructor (props) {
