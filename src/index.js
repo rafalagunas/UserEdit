@@ -5,14 +5,14 @@ import { Platform, StyleSheet, Text, Form, Input, View } from 'react-native';
 import UserEdit from './components/UserEdit/UserEdit';
 import NewPass from './components/UserEdit/NewPass';
 import WelcomePage from './components/WelcomePage/WelcomePage';
-
+import Slid from './components/SliderEntry/index';
 //* REDUX *//
 import { Provider } from 'react-redux';
 import store from './store';
 
 const App = () => (
   <Provider store={store}>
-    <WelcomePage />
+    <Slid />
   </Provider>
 )
 
