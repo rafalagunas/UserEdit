@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 export const colors = {
     black: '#495fa0',
@@ -6,6 +6,13 @@ export const colors = {
     background1: '#495fa0',
     background2: '#495fa0'
 };
+
+// Variables////////////////////////////
+const window = Dimensions.get('window');
+const slideHeight = (window.height)/1.3;
+const ButtonVieWidth = (window.width)/2;
+const ButtonViewHeight = (window.height)/.5;
+////////////////////////////////////////
 
 export default StyleSheet.create({
     safeArea: {
@@ -60,5 +67,41 @@ export default StyleSheet.create({
         height: 8,
         borderRadius: 4,
         marginHorizontal: 8
-    }
+    },
+    
+    next:{
+        backgroundColor:"#000000",
+        marginTop: 10
+    },
+    container: {
+      flex: 1,
+      backgroundColor: '#495fa0'
+    },    
+    ButtonsView: {
+        width: ButtonVieWidth,
+        marginTop: 15
+    },
+    buttonsContainer: {
+        marginTop:-70,
+        flex:1,
+        flexDirection: 'row'
+    },
+
+    ButtonLogin:{
+        height: 56,
+        marginTop:45,
+        backgroundColor: "#f1de5b",
+        alignItems:'center',
+        justifyContent: 'center',
+        width: ButtonVieWidth
+    },
+
+    ButtonRegister:{
+        height: 56,
+        marginTop:45,
+        backgroundColor: "#0459ed",
+        alignItems:'center',
+        justifyContent: 'center',
+        width: ButtonVieWidth
+    },
 });

@@ -22,7 +22,7 @@ export default StyleSheet.create({
         width: itemWidth,
         height: slideHeight,
         paddingHorizontal: itemHorizontalMargin,
-        paddingBottom: 18 // needed for shadow
+        paddingBottom: 5 // needed for shadow
     },
     imageContainer: {
         flex: 1,
@@ -31,7 +31,7 @@ export default StyleSheet.create({
         borderTopRightRadius: entryBorderRadius
     },
     imageContainerEven: {
-        backgroundColor: colors.black
+        backgroundColor: '#495fa0'
     },
     image: {
         ...StyleSheet.absoluteFillObject,
@@ -67,6 +67,8 @@ export default StyleSheet.create({
     title: {
         color: 'white',
         fontSize: 13,
+        marginLeft:120,
+        marginTop: -24,
         fontWeight: 'bold',
         letterSpacing: 0.5
     },
@@ -74,8 +76,9 @@ export default StyleSheet.create({
         color: 'white'
     },
     subtitle: {
-        marginTop: 6,
+        marginTop: -5,
         color: 'white',
+        marginLeft:130,
         fontSize: 12,
         fontStyle: 'italic'
     },

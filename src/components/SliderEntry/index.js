@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Text, StatusBar, SafeAreaView } from 'react-native';
+import { View, ScrollView, Text, StatusBar, SafeAreaView, TouchableOpacity } from 'react-native';
 
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import { sliderWidth, itemWidth } from './SliderEntry.style';
@@ -44,7 +44,7 @@ export default class Slid extends Component {
 
         return (
             <View style={styles.exampleContainer}>
-                <Text style={styles.title}>Reparakit</Text>
+                <Text style={styles.title}>ketara pit</Text>
    
                 <Carousel
                   ref={(c) => { if (!this.state.slider1Ref) { this.setState({ slider1Ref: c }); } }}
@@ -71,6 +71,18 @@ export default class Slid extends Component {
                   }}
                 
                 />
+                      <Pagination
+                  dotsLength={ENTRIES1.length}
+                  activeDotIndex={slider1ActiveSlide}
+                  containerStyle={styles.paginationContainer}
+                  dotColor={'rgba(255, 255, 255, 0.92)'}
+                  dotStyle={styles.paginationDot}
+                  inactiveDotColor={'white'}
+                  inactiveDotOpacity={0.4}
+                  inactiveDotScale={0.6}
+                  carouselRef={slider1Ref}
+                  tappableDots={!!slider1Ref}
+                />
           
             </View>
         );
@@ -94,7 +106,14 @@ export default class Slid extends Component {
                       directionalLockEnabled={true}
                     >
                         { this.example1 }
-
+                        <View style={styles.buttonsContainer}>
+                    <TouchableOpacity style={styles.ButtonLogin}>
+                        <Text>LOGIN</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.ButtonRegister}>
+                        <Text>REGISTER</Text>
+                    </TouchableOpacity>
+            </View> 
                     </ScrollView>
                 </View>
             </SafeAreaView>
